@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Footer from "./Footer";
+import Header from "./Header";
+import Main from "./Main";
+import styled from "styled-components";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const Caixa = styled.div`
+    background: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  
+  Header{
+    margin-top: 10px;
+    background: #065A82;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 32vh  
+  }
+
+  Main {
+    background: #1C7293;
+    width: 100%;
+    height: 32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+  }
+
+  Footer {
+    background: #9EB3C2;
+    width: 100%;
+    height: 32vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+  }
+`
+
+export default class App extends Component{
+    render(){
+        return(
+            <Caixa>
+              <Header nome= "Ryan"/>
+              <Main idade= {16} />
+              <Footer estudo= "React js" />
+            </Caixa>
+        )
+    }
 }
-
-export default App;
